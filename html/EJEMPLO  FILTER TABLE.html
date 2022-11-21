@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h2>BUSCADOR DE PELICULAS FAVORITAS 2021</h2>
+<img id="lupa" src="../img/lupa.jpg">
+<input type="text" id="datos" onkeyup="Buscar()" placeholder="Buscar por nombres de película..">
+
+<table id="tablaDatos">
+  <tr class="header">
+    <th style="width:40%;">Nombre Pelicula</th>
+    <th style="width:30%;">Poster / Ver Trailer</th>
+    <th style="width:30%;">Clasificación</th>
+
+  </tr>
+  <tr>
+    <td>Top Gun: Maverick</td>
+    <td><a href="https://youtu.be/zzBIzYmxatU"><img src="../img/topgun.jpg"></a></td>
+    <td>Acción</td>
+
+  </tr>
+  <tr>
+    <td>Terror en lo profundo</td>
+    <td><a href="https://youtu.be/6xsHvXasxuI"><img src="../img/terrorp.jpg"></a></td>
+    <td>Suspenso</td>
+  </tr>
+  <tr>
+    <td>Mujer maravilla 1984</td>
+    <td><a href="https://youtu.be/P0tAIUhKsn4"><img src="../img/wwoman.jpg"></a></td>
+    <td>Acción</td>
+  </tr>
+  <tr>
+    <td>Dios no esta muerto 1</td>
+    <td><a href="https://youtu.be/1BsoiBPEGvU"><img src="../img/Dios.png"></a></td>
+    <td>Religiosa</td>
+  </tr>
+  <tr>
+    <td>Uncharted: Fuera del mapa</td>
+    <td><a href="https://youtu.be/62bKO3LP6HA"><img src="../img/Uncharted.jpg"></a></td>
+    <td>Acción</td>
+  </tr>
+   
+</table>
+
+<script>
+function Buscar() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("datos");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("tablaDatos");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+        } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  #datos {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+  img{
+    width: 120px;
+    height:120px;
+  }
+  #lupa{
+    width:20px;
+    height: 20px;
+    position:absolute;
+    left:15px; 
+    top:75px;
+    }
+  #tablaDatos {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+  }
+  
+  #tablaDatos th, #tablaDatos td {
+    text-align: left;
+    padding: 12px;
+  }
+  
+  #tablaDatos tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #tablaDatos tr.header, #tablaDatos tr:hover {
+    background-color: #f1f1f1;
+  }
+  </style>
+</body>
+</html>

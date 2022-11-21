@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- link fontawesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+  transition: background 0.2s linear;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Agrega padding entre cada column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Crea 3 columns iguales que flotan entre ellas */
+.column {
+  float: left;
+  width: 33.33%;
+  display: block;
+}
+
+/* Borra floats despues de rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  color:white;
+ 
+ 
+
+}
+img,h4,p{
+margin-left: 18px;
+}
+
+/* Style a los buttons */
+.btn {
+  border-radius: 25px;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+/*coloca color blanco cuando se pasa el mouse encinma del botón*/
+.btn:hover {
+  background-color: #ddd;
+}
+/*coloca color gris cuando se da clic en botón activo*/
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+/*---------Botón toggle switche dark/ligth-----------*/
+* {
+	box-sizing: border-box;
+}
+
+#btnContainer {
+	display: flex;
+	flex-direction: row;
+  justify-content:space-evenly;
+	margin: 0;
+} 
+
+body.dark {
+	background: #292C35;
+  color: white;
+}
+.content.dark{
+  background: #292C35;
+}
+
+.checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 5px;
+	position: relative;
+	height: 26px;
+	width: 50px;
+
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+
+
+.fa-moon {
+	color: rgba(128, 128, 128, 0.888);
+}
+
+.fa-sun {
+	color: white;
+}
+
+</style>
+</head>
+<body>
+
+<!-- MAIN -->
+<div class="main">
+
+<h1>TIENDA MI PC.COM</h1>
+<hr>
+
+<h2>PORTAFOLIO DE TIENDA ONLINE</h2>
+<div id="btnContainer">
+  <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
+  <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+  <div><!-- cambio toggle switch-->
+    <input type="checkbox" class="checkbox" id="chk" />
+    <label class="label" for="chk">
+      <i class="fas fa-sun"></i>
+      <i class="fas fa-moon"></i>
+      <div class="ball"></div>
+    </label>
+  </div>
+</div>
+<br>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column computador">
+    <div class="content">
+     <a href="./EJEMPLO  ZOOM IMAGE.html"><img src="../img/portatiles4.jpg" alt="" style="width:250px; height:250px;"></a>
+      <h4>Portátil Gamer ACER 15.6"  </h4>
+      <p>Intel Core i5 - RAM 8GB - HDD 1 TB </p>
+    </div>
+  </div>
+  <div class="column computador">
+    <div class="content">
+      <a href="./EJEMPLO  ZOOM IMAGE2.html">
+    <img src="../img/portatiles2.jpg" alt="" style="width:250px;height:250px;"></a>
+      <h4>Portatil HP 14"</h4>
+      <p>Intel Core i3- 4 GB RAM- DD 1TB</p>
+    </div>
+  </div>
+  <div class="column computador">
+    <div class="content">
+    <img src="../img/portatiles3.jpg" alt="" style="width:250px;height:250px;">
+      <h4>Portátil ASUS VivoBook 14"</h4>
+      <p>Intel Core i5 - 8GB RAM - SSD 512 GB</p>
+    </div>
+  </div>
+  
+  <div class="column productos">
+    <div class="content">
+      <img src="../img/pollo.jpg" alt="" style="width:250px;height:250px;">
+      <h4>Pollo Entero</h4>
+      <p>Pollo entero Pikoriko congelado.</p>
+    </div>
+  </div>
+  <div class="column productos">
+    <div class="content">
+    <img src="../img/limon.jpg" style="width:250px;height:250px;">
+      <h4>Limones</h4>
+      <p>Limones tangelo x kilo..</p>
+    </div>
+  </div>
+  <div class="column productos">
+    <div class="content">
+    <img src="../img/Arroz.jpg" alt="" style="width:250px;height:250px;">
+      <h4>Arroz</h4>
+      <p>Arroz Diana Bolsa x 500gr.</p>
+    </div>
+  </div>
+
+  <div class="column cursos">
+    <div class="content">
+      <img src="../img/JAVASCRIPT.png" alt="" style="width:250px;height:250px;">
+      <h4>Javascript</h4>
+      <p>Lenguaje programación Javascript.</p>
+    </div>
+  </div>
+  <div class="column cursos">
+    <div class="content">
+    <img src="../img/css3.png" alt="" style="width:250px;height:250px;">
+      <h4>CSS3</h4>
+      <p>Hoja de estilos CSS3.</p>
+    </div>
+  </div>
+  <div class="column cursos">
+    <div class="content">
+    <img src="../img/HTML5.png" alt="" style="width:250px;height:250px;">
+      <h4>HTML5</h4>
+      <p>Lenguaje páginas web HTML5.</p>
+    </div>
+  </div>
+<!-- END GRID CONTAINER-->
+</div>
+
+<!-- END MAIN CONTAINER-->
+</div>
+
+<script>
+
+//----------------------------------------------------------------------//
+// Obtener los elementos con class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declaracion variable for 
+var i;
+// List View
+function listView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "100%";
+    elements[i].style.display = "flex";
+    elements[i].style.justifyContent = "center";
+    elements[i].style.alignItems= "center";
+
+
+  }
+}
+
+// Grid View
+function gridView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "33.33%";
+   // elements[i].style.display = "block";
+      
+  }
+}
+
+/* Agrega clase activa al boton actual (ilumimado) */
+var container = document.getElementById("btnContainer");
+var btns = container.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+//  BOTON TOGGLE SWITCHE
+const chk = document.getElementById('chk');
+
+chk.addEventListener('change', () => {
+document.body.classList.toggle('dark');
+});
+</script>
+</body>
+</html>

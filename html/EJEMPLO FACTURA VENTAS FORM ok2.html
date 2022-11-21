@@ -1,0 +1,209 @@
+<!DOCTYPE Html>
+<head>
+    <title>FORMULARIO FACTURA CHECKED </title>
+    <link rel="stylesheet" href="../css/estilo01.css">
+    <!-- link de sitio SweetAlert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+  <!---Programa que permita hacer un pedido de comidas rápidas -->
+  <center><h1>FACTURA DE VENTAS COMIDAS RAPIDAS </h1>
+  <form action="pedido.php" method="post" >
+     <!-- Seccion cabecera de encabezado de factura -->
+      <table><caption>FACTURA DE VENTA</caption>
+      <tr><th>Nombre</th><td><input type="text" size="20" ></td><th>TIPO DOCUMENTO </th><th><select id="tp"><option>CC </option><option>CE</option><option>NIT</option></select></th><th>No.DOCUMENTO</th><td><input type="text" size="25"></td></tr>
+      <tr><th>DIRECCION</th><td><input type="text" id="dir" size="20"></td><th>TELEFONO</th><td><input type="text" id="tel" size="20"></td><th>EMPLEADO</th><td><input type="text" id="emp" size="25"></td></tr>
+     <!-- Seccion cabecera de detalle de factura -->
+      <tr><th>REFERENCIA</th>
+      <th colspan="2">DESCRIPCION</th><th>CANTIDAD</th><th>VALOR UNITARIO</th><th>SUBTOTAL</th></tr>
+      <tr>
+        <th><select id="prod1" onchange="mostrar();">
+            <option>Seleccionar:</option>
+            <option value="25000">Combo Hamburgueza</option>
+            <option value="20000">Combo Perro Caliente</option>
+            <option value="35000"> Combo Pizza</option>
+            </select></th>
+            <th colspan="2"><input type="text" id="desc01" size="40"></th>
+            <th><input type="number" id="cant01" size="10" ></th>
+            <th><input type="number" id="vau01" size="15" disabled></th>
+            <th><input type="text" id="vat01" size="15"disabled></th></tr>
+      <tr>
+        <th><select id="prod2" onchange="mostrar();">
+            <option>Seleccionar:</option>
+            <option value="25000">Combo Hamburgueza</option>
+            <option value="20000">Combo Perro Caliente</option>
+            <option value="35000"> Combo Pizza</option>
+            </select></th>
+            <th colspan="2">
+            <input type="text" id="desc02" size="40"></th>
+            <th><input type="number" id="cant02" size="10"></th>
+            <th><input type="text" id="vau02" size="15" disabled></th>
+            <th><input type="text" id="vat02" size="15" disabled></th></tr>  
+    <tr>
+    <th><select id="prod3"onchange="mostrar();">
+            <option>Seleccionar:</option>
+            <option value="25000">Combo Hamburgueza</option>
+            <option value="20000">Combo Perro Caliente</option>
+            <option value="35000"> Combo Pizza</option>
+            </select></th>
+            <th colspan="2"><input type="text" id="desc03" size="40"></th>
+            <th><input type="number" id="cant03" size="10"></th>
+            <th><input type="text" id="vau03" size="15" disabled></th>
+            <th><input type="text" id="vat03" size="15" disabled></th>
+        </tr> 
+        <tr><th colspan="6">ADICIONALES</th></tr>
+        <tr><th colspan="2" rowspan="2"><img src="./img/Cerveza.jpg" alt="">
+            <input type="radio" name="adic" id="radio4">CERVEZA _$3.000</th>
+            <th colspan="2" rowspan="2"><img src="./img/helado.jpg" alt="">
+            <input type="radio" name="adic" id="radio5">HELADO_$2.500</th>
+            <th colspan="2" rowspan="2"><img src="./img/jugo-hit.png" alt="">
+            <input type="radio" name="adic" id="radio6">JUGO HIT_$2.300</th>
+        </tr> 
+     <!--Seccion liquidación de factura  -->
+     <tr></tr>
+     <tr><th colspan="4">TOTAL ADICIONALES</th>
+        <th colspan="2"><input type="number" id="adic0" disabled></th></tr>
+      <tr><th colspan="2"> FORMA DE PAGO</th>
+      <th colspan="2"><input type="radio" name="fp" id="radio1">Efectivo <br> 
+      <input type="radio" name="fp" id="radio2">Cheque <br> 
+      <input type="radio" name="fp" id="radio3">Tarjeta</th>
+      <th>SUBTOTAL</th><td><input type="text" id="subt" size="25"></td></tr>
+      <tr>
+      <th colspan="4" rowspan="3">OBSERVACIONES: Revise su pedido y vueltas de la cancelación</th>
+      <th>IVA</th><td><input type="text" id="iva" size="25"></td></tr>
+      <tr><th>DESCUENTO</th><td><input type="text" id="desc" size="25"></td></tr>  
+      <tr><th>NETO</th><td><input type="text" id="neto" size="25"></td></tr>  
+      <tr><th colspan="2"><input type="button" value="CALCULAR PAGO" onclick="mostrar();"></th>
+      <th colspan="2"><input type="reset" value="BORRAR"></th>
+      <th colspan="2"><input type="button" value="ENVIAR" onclick="enviar();"></th>
+    </tr>
+  </form>
+  <script>
+    function mostrar()
+      {
+        let item1=document.getElementById('prod1');
+        let item2=document.getElementById('prod2');
+        let item3=document.getElementById('prod3');
+        let adic=0;
+        //1er. item de factura    
+        if(item1.selectedIndex==0)
+            {
+                document.getElementById('desc01').value=""; 
+                /*--*/
+                
+            }
+            if(item1.selectedIndex==1)
+            {
+                document.getElementById('desc01').value="Hamburgueza Americana + Gaseosa Vaso+ Papas francesa";/*--*/ 
+                document.getElementById('vau01').value=item1.options[item1.selectedIndex].value; 
+                document.getElementById('vat01').value=(parseFloat(document.getElementById('cant01').value)*parseFloat(document.getElementById('vau01').value)|| 0).toFixed(2);
+                //imagen01='<img src="/img/foto01.png">'//
+                
+            }
+            if(item1.selectedIndex==2)
+            {
+                document.getElementById('desc01').value="Perro Americano + Gaseosa vaso+ Papa francesa";/*--*/
+                document.getElementById('vau01').value=item1.options[item1.selectedIndex].value; 
+                document.getElementById('vat01').value=(parseFloat(document.getElementById('cant01').value)*parseFloat(document.getElementById('vau01').value)|| 0).toFixed(2);
+            }
+            if(item1.selectedIndex==3)
+            {
+                document.getElementById('desc01').value="Pizza Hawaiana + Gaseosa vaso";/* */
+                document.getElementById('vau01').value=item1.options[item1.selectedIndex].value; 
+                document.getElementById('vat01').value=(parseFloat(document.getElementById('cant01').value)*parseFloat(document.getElementById('vau01').value)|| 0).toFixed(2);
+            }
+        //2do. item de factura    
+        if(item2.selectedIndex==0)
+            {
+                document.getElementById('desc02').value=""; 
+                /*--*/
+                
+            }
+            if(item2.selectedIndex==1)
+            {
+                document.getElementById('desc02').value="Hamburgueza Americana + Gaseosa Vaso+ Papas francesa";/*--*/ 
+                document.getElementById('vau02').value=item2.options[item2.selectedIndex].value; 
+                document.getElementById('vat02').value=(parseFloat(document.getElementById('cant02').value)*parseFloat(document.getElementById('vau02').value)|| 0).toFixed(2);
+                //imagen01='<img src="/img/foto01.png">'//
+                
+            }
+            if(item2.selectedIndex==2)
+            {
+                document.getElementById('desc02').value="Perro Americano + Gaseosa vaso+ Papa francesa";/*--*/
+                document.getElementById('vau02').value=item2.options[item2.selectedIndex].value;
+                document.getElementById('vat02').value=(parseFloat(document.getElementById('cant02').value)*parseFloat(document.getElementById('vau02').value)|| 0).toFixed(2);
+            }
+            if(item2.selectedIndex==3)
+            {
+                document.getElementById('desc02').value="Pizza Hawaiana + Gaseosa vaso";/* */
+                document.getElementById('vau02').value=item2.options[item2.selectedIndex].value;
+                document.getElementById('vat02').value=(parseFloat(document.getElementById('cant02').value)*parseFloat(document.getElementById('vau02').value)|| 0).toFixed(2);
+            }
+            //3er. item de factura    
+        if(item3.selectedIndex==0)
+            {
+                document.getElementById('desc03').value=""; 
+                /*--*/
+                
+            }
+            if(item3.selectedIndex==1)
+            {
+                document.getElementById('desc03').value="Hamburgueza Americana + Gaseosa Vaso+ Papas francesa";/*--*/ 
+                document.getElementById('vau03').value=item3.options[item3.selectedIndex].value;
+                document.getElementById('vat03').value=(parseFloat(document.getElementById('cant03').value)*parseFloat(document.getElementById('vau03').value)|| 0).toFixed(2);
+                //imagen01='<img src="/img/foto01.png">'//
+                
+            }
+            if(item3.selectedIndex==2)
+            {
+                document.getElementById('desc03').value="Perro Americano + Gaseosa vaso+ Papa francesa";/*--*/
+                document.getElementById('vau03').value=item3.options[item3.selectedIndex].value;
+                document.getElementById('vat03').value=(parseFloat(document.getElementById('cant03').value)*parseFloat(document.getElementById('vau03').value)|| 0).toFixed(2);
+            }
+            if(item3.selectedIndex==3)
+            {
+                document.getElementById('desc03').value="Pizza Hawaiana + Gaseosa vaso";/* */
+                document.getElementById('vau03').value=item3.options[item3.selectedIndex].value;
+                document.getElementById('vat03').value=(parseFloat(document.getElementById('cant03').value)*parseFloat(document.getElementById('vau03').value)|| 0).toFixed(2);
+            }
+            // Calcular Adicionales**********//
+                if(document.getElementById('radio4').checked)
+           {
+            document.getElementById('adic0').value=3000;
+           }
+           else if(document.getElementById('radio5').checked)
+              {
+                document.getElementById('adic0').value=2500;
+              }
+              else if (document.getElementById('radio6').checked)
+                  {
+                    document.getElementById('adic0').value=2300;
+                  }
+            //Calcular valor subtotal
+            document.getElementById('subt').value=(parseFloat(document.getElementById('vat01').value)+parseFloat(document.getElementById('vat02').value)+parseFloat(document.getElementById('vat03').value)+parseFloat(document.getElementById('adic0').value)|| 0).toFixed(2);
+            // Calcular Iva**********//
+            document.getElementById('iva').value=(parseFloat(document.getElementById('subt').value)*0.19|| 0).toFixed(2);
+       
+            // Calcular Descuento**********//
+            if(document.getElementById('radio1').checked)
+           {
+                document.getElementById('desc').value=(parseFloat(document.getElementById('subt').value)*0.10|| 0).toFixed(2);
+           }
+           else if(document.getElementById('radio2').checked)
+              {
+                document.getElementById('desc').value=(parseFloat(document.getElementById('subt').value)*0.00|| 0).toFixed(2);
+              }
+              else if (document.getElementById('radio3').checked)
+                  {
+                    document.getElementById('desc').value=(parseFloat(document.getElementById('subt').value)*0.00|| 0).toFixed(2);
+                  }
+            // Calcular Neto**********//
+            document.getElementById('neto').value=(parseFloat(document.getElementById('subt').value)+parseFloat(document.getElementById('iva').value)-parseFloat(document.getElementById('desc').value)|| 0).toFixed(2);
+            }
+            function enviar(){
+                swal("ESTIMADO CLIENTE","ESPERO SU PEDIDO EN SERVICIO...","success");
+            }
+    
+  </script> 
+</center>
+</body>

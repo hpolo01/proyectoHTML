@@ -1,0 +1,192 @@
+body{
+	background: lightblue;
+  font-family: Tahoma;
+	font-size: 20px;
+}
+header {
+padding:0px 0px;
+display: flex;
+}
+/* seccion menu */
+ul{
+	padding: 0 0;
+	margin: 0 1px;
+}
+li{
+	display: inline;
+	list-style: none;
+	margin: 0 5px;
+	font: bold 12px Verdana;
+}
+a{
+	color: white;
+	text-decoration: none;
+}
+#menu{
+   background-color: blue;/*cambio*/
+   padding: 0px 0px;
+   border-radius: 20px;
+   height: 38px;
+}
+/* seccion contenido */
+section {
+	width: 75%;
+	height: 1200px;
+	background: lightgray;
+	float: left;
+	border: 1px solid black;
+  margin-bottom: 20px;
+}
+img{
+	display: inline;
+	margin: 1em;
+	padding: 5px 5px;
+	font-family: jokerman;
+  
+}
+    
+aside {
+	float: right;
+	border: 1px solid black;
+	width: 24%;
+	height: 1200px; /*cambio*/
+	background: lightgreen;
+	text-align: center;
+}
+
+.programa{
+	display: inline-block;
+	margin: 5px 5px;
+	padding: 5px 5px;
+	width: 45%;
+	height: 200px;
+	position: relative;
+	border: 1px solid black; 
+	border-radius: 15px 15px;
+	
+}
+section article{
+	background-color: lightcyan;
+    width: 200px;
+    margin: 20px;
+    }
+
+
+footer {
+	clear: both;
+	width: 100%; 
+	height: 120px;
+    background: olive;
+	color: white;
+	}
+/* ESTILOS PARA MENUS *//*cambio*/
+.mainmenu a:hover{
+	color: white;
+	text-decoration: none;
+	}
+
+/* nuevos estilos */
+
+.mainmenu  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 250px;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  .mainmenu a {
+    padding: 8px 8px 8px 12px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.5s;
+  }
+  .openbtn {
+    font-size: 20px;
+    background-color:blue;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    cursor: pointer;
+  }
+ 
+  .mainmenu .closebtn {
+    position: absolute;
+    color:silver;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  #content-menu{
+    display:flex;
+    flex-direction:line;
+    justify-content:space-between; 
+    align-items: center;
+    }
+  #redes, #reguser{
+    margin:0;
+    padding:2px;    
+  }
+
+  /* ESTILOS PARA FONTAWESOME *//*cambio*/
+ .fa-home{
+ 	color:white;
+ 	font-size: 18px;
+ }  
+ .fa-cart-arrow-down{
+ 	color:white;
+ 	font-size: 18px;
+ }
+ .fa-charging-station{
+ 	color:white;
+ 	font-size: 18px;
+ 	 }
+ .fa-wpforms{
+ 	 	color:white;
+ 	 	font-size: 18px;
+ }
+ .fa-user{
+  color:white;
+  font-size: 18px;
+}
+  /* ESTILOS BARRAS SOCIAL PARA FONTAWESOME *//*cambio*/
+.fab {
+  color:white;
+  border:1px solid transparent;
+  margin:0px;
+  }
+.fa-youtube-square{
+  font-size: 32px;
+  color:white;
+  
+}
+.fa-facebook-square{
+   font-size: 32px;
+  color: white;
+     }
+.fa-twitter-square{
+   font-size: 32px;
+  color: white;
+    }
+.fa-whatsapp{
+   font-size: 32px;
+  color: white;
+    }
+.fa-instagram{
+   font-size: 32px;
+   color: white;
+    }
+.fa-search{
+   font-size: 22px;
+   color: white;
+    }

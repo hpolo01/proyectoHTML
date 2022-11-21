@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <title> FORMULARIO</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<style>
+/* seccion de estilos CSS3 para la pagina web */
+    body{
+        background: white;    
+    }
+    section{
+        width: 40%;
+        border: 1px solid black;
+        padding:10px 10px;
+        border-radius: 20px;
+        margin:10px auto;
+        background: linear-gradient(navy, blue);
+    }
+    form{
+       background: silver;
+       width: 70%;
+       border-radius: 20px;
+       margin: 10px auto;
+       box-shadow: inset 0 0 10px purple;
+        }
+    fieldset{
+        border-style: none;
+    }
+    label{
+        font-size: 18px;
+    }
+    textarea{
+        resize: both;
+        max-height: 100px;
+    }
+    input:focus , textarea:focus{
+        border-color: rgb(20,0,255);
+        cursor: pointer;
+        box-shadow:inset 0 0 8px rgba(0, 29,255,0.6);
+        outline:0 none;
+
+    }
+    form button{
+        width: 40%;
+        margin: 15px 0px 20px 25px;
+        height: 40px;
+        background: radial-gradient(teal,black);
+        border:2px solid black;
+        color:white;
+        border-radius: 15px 15px;
+        
+    }
+    form button:hover{
+        background: lightblue;
+        text-decoration: underline;
+        color:black;
+        cursor:pointer;
+    }
+    footer{
+        font-size:16px;
+        text-align: center;
+        color:darkblue;
+    }
+    form input{
+        height: 20px;
+        box-sizing: border-box;
+        color:black;
+        border: 1px solid black;
+    }
+    /* seccion de vista en celulares */
+    @media (min-width:350px) and (max-width:850px) {
+        section form label{
+        max-width: 100%;
+        height: auto;
+        font-size: 85%;
+        }
+        
+        form fieldset > * {
+        display:flex;
+        flex-wrap:wrap;
+        flex-direction:column;
+        
+    }
+    
+   }
+</style>
+ <header>
+    <center><img src="img/incap.jpeg" width="100" height="100" alt="incap">
+     <h1>FORMULARIO DE CONTACTO EN HTML5</h1>
+    </center>
+    </header>   
+<br>
+<section>
+    <form action="mailto:heladio.polo@incap.edu.co" method="post" enctype="text/plain">
+    <fieldset>
+        <label for="nombre">Nombre Completo:</label>
+        <input name="nombre" type="text" placeholder="Ingrese su nombre completo" required="">
+        <br><br>
+        <label for="Email">E-mail:</label>
+        <input name="email" type="email" placeholder="Ingrese su Email" required="">
+        <br><br>
+        <label for="password">Contraseña:</label>
+        <input name="contraseña" type="password" placeholder="Ingrese su contraseña" required="">
+        <br><br>
+        <label for="hobbies">Selecciona tus hobbies:
+        </label>
+        <br>
+        <input name="cine" type="checkbox">Cine<br>
+        <input name="lectura" type="checkbox">lectura<br>
+        <input name="Deporte" type="checkbox">Deporte<br>
+        <br>
+        <br>
+        <label for="ecivil">Estado civil:</label><br>
+        <input name="estcivil" type="radio" value="casado">Casado(a)<br>
+        <input name="estcivil" type="radio" value="soltero">Soltero(a)<br>
+        <input name="estcivil" type="radio" value="viudo">Viudo(a)<br>
+        <br>
+        <br>
+        <label for="programa">PROGRAMAS TECNICOS:</label>
+        <select name="select inputs">
+        <option>Sistemas</option>
+        <option>Diseño gráfico</option>
+        <option>Contabilidad</option>
+        <option>Banca y finanzas</option>
+        </select>
+        <br>
+        <br>
+        <label for="comment">Tu comentario:</label><br>
+        <textarea name="mensaje" rows="5" cols="40"></textarea>
+        </fieldset>
+    <button type="submit">Enviar</button>
+    <button type="reset">Cancelar</button>
+    <br>
+    <br>
+    </form>
+    </section>
+    <footer>
+    Derechos reservados &copy;2021&#64;Heladio  
+    </footer>
+    
+</body>
+</html>

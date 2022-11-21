@@ -1,0 +1,149 @@
+body{
+  background-color: lightblue;  
+}
+header{
+    background-color: lightblue;
+    padding: 0px 0px;
+    font-family: Arial; 
+    font-size: 25px;
+    display: flex;
+    height: 200px;
+}
+ul{
+    padding: 0 0;
+    margin: 0 1px;
+}
+li{
+display: inline;
+list-style: none;
+margin: 0 5px;
+font: bold 12px Verdana;
+}
+a{
+    color:lightgreen;
+    text-decoration: none;
+}
+#menu{
+    background-color: blue;
+    padding: 0px 0px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+section{
+width: 75%;
+height: 1200px;
+background-color: lightgray;
+float: left;
+border: 1px solid black;
+}
+img{
+display: inline;
+margin: 1em;
+padding: 5px 5px;
+}
+figcaption{
+    display: inline;
+    margin: 45px;
+    padding: 5px 5px;
+}
+aside{
+float: right;
+border:1px solid black;
+width:24%;
+height: 1200px;
+background-color: lightseagreen;
+text-align: center;
+}
+footer{
+    clear: both;
+    width:100%;
+    height: 120px;
+    background-color: teal;
+    color:white;
+}
+/* Estilos para barra redes sociales */
+/* Definir Pseudoclase efecto hover: aplica al pasar mouse sobre el elemento */
+#redes a i:hover{
+color:white;
+transform: scaleX(1.2);
+transition: .5s;
+}
+.programa{
+display: inline-block;
+margin: 5px 5px;
+padding: 5px 5px;
+width: 45%;
+height: 200px;
+position:relative;
+border:1px solid black;
+border-radius: 15px 15px;
+}
+section article{
+    background-color: lightsalmon;
+    width: 200px;
+    margin: 20px; 
+}
+/* redes sociales  */
+#redes{
+    margin:0;
+    display:inline;
+    width: 0;
+    height: auto;
+}
+/* Estilos para fontawesome */
+.fa-home{
+    color:white;
+    font-size: 18px;
+}
+.fa-cart-arrow-down{
+    color:white;
+    font-size: 18px;
+}
+.fa-charging-station{
+    color:white;
+    font-size: 18px;
+}
+.fa-wpforms{
+    color:white;
+    font-size: 18px;
+}
+.fa-user{
+    color:white;
+    font-size: 18px;
+}
+/* estilos barra de redes sociales fontawesome */
+.fab{
+color:white;
+border:1px solid transparent;
+margin:0px;
+}
+.fa-youtube-square{
+    font-size: 32px;
+    color: white;
+}
+.fa-facebook-square{
+    font-size: 32px;
+    color: white;
+}
+.fa-twitter-square{
+    font-size: 32px;
+    color: white;
+}
+.fa-whatsapp{
+    font-size: 32px;
+    color: white;
+}
+.fa-instagram{
+    font-size: 32px;
+    color: white;
+}
+.fa-search{
+    font-size: 22px;
+    color: white;
+}
+
+

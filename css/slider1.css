@@ -1,0 +1,77 @@
+body{
+    background-color: aqua;
+    margin-top: 100px;
+}
+/* titulos h1 */
+h1{
+    color:#000;
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* estilos contenedor */
+.contenedor{
+margin: auto;
+background-color:lightcyan;
+width: 500px;
+padding: 30px;
+}
+/* estilos lista de imagenes */
+ul, li{
+padding: 0;
+margin: 0;
+text-align: center;
+list-style: none; /*elimina viñetas*/
+}
+
+/* estilos contenedor imagenes */
+ul.img-slider{
+    position: relative;
+    width: 500px;
+    height: 300px;
+}
+
+/* estilos */
+ul.img-slider li{
+    position: absolute;
+    left:0px;
+    top:0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    background-color: white;
+}
+ul.img-slider li img{
+    width: 100%;
+    height: 300px;
+    object-fit: fill; /*ocupe espacio total contenedor*/
+}
+ul.img-slider li:first-child {
+    opacity: 1;
+}
+/* estilos para enlazar boton con imagen respectiva */
+ul.img-slider li:target {
+opacity: 1;
+}
+/* seccion de estilos de botones */
+.menu-btn{
+text-align: center;
+margin: 20px;
+}
+.menu-btn li{
+   margin-top: 20px;
+   display: inline-block;
+   text-align: center;
+}
+.menu-btn li a{
+   display: inline-block;
+   color:white;
+   text-decoration: none;
+   background-color: black;
+   padding: 10px;
+   width: 20px;
+   height: 20px;
+   font-size: 20px;
+   border-radius: 30%;
+}
+
