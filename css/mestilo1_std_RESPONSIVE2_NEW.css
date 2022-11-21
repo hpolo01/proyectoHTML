@@ -276,7 +276,7 @@ iframe{
 }
 }
 /*----- SECCION VISTA DE CELULAR  - a  1  columna ------*/
-@media (max-width:580px){
+@media (max-width:480px){
     #grid-container{/*cambio*/
     grid-template: 
      "header" 150px
