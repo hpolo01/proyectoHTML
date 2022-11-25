@@ -1,5 +1,5 @@
 function openMenu(){
-document.getElementById("mainMenu").style.width="480px";//esta es clave para poder ver iconos de cierre//
+document.getElementById("mainMenu").style.width="470px";//esta es clave para poder ver iconos de cierre//
 document.getElementById("mainMenu").style.display="flex";
 document.getElementById("mainMenu").style.height="1000px";
 document.getElementById("openmenu").style.display="none";
